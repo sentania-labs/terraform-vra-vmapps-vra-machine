@@ -9,30 +9,9 @@ resource "vra_machine" "this" {
   image       = var.image
   flavor      = var.flavor
 
-  dynamic "image_disk_constraints" {
-    for_each = var.image_disk_constraints
-    content {
-      mandatory  = image_disk_constraints.value.mandatory
-      expression = image_disk_constraints.value.expression
-    }
-  }
-
-}
-dynamic "tags" {
-  for_each = var.tags
-  content {
-    key   = tags.value["key"]
-    value = tags.value["value"]
-  }
-}
-dynamic "constraints" {
-  dynamic "constraints" {
-    for_each = var.constraints
-    content {
-      mandatory  = constraints.value.mandatory
-      expression = constraints.value.expression
-    }
-  }
+  image_disk_constraints = var.image_disk_constraints
+  tags = var.tags
+  constraints = var.constraints
 
   dynamic "disks" {
     for_each = var.disks
