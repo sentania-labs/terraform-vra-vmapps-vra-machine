@@ -3,13 +3,16 @@
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.9 |
+| <a name="requirement_vra"></a> [vra](#requirement\_vra) | >= 0.15.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_vra"></a> [vra](#provider\_vra) | n/a |
+| <a name="provider_vra"></a> [vra](#provider\_vra) | >= 0.15.0 |
 
 ## Modules
 
@@ -19,8 +22,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [vra_machine.this](https://registry.terraform.io/providers/hashicorp/vra/latest/docs/resources/machine) | resource |
-| [vra_project.this](https://registry.terraform.io/providers/hashicorp/vra/latest/docs/data-sources/project) | data source |
+| [vra_machine.this](https://registry.terraform.io/providers/vmware/vra/latest/docs/resources/machine) | resource |
+| [vra_project.this](https://registry.terraform.io/providers/vmware/vra/latest/docs/data-sources/project) | data source |
 
 ## Inputs
 
