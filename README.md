@@ -30,11 +30,11 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_boot_config_content"></a> [boot\_config\_content](#input\_boot\_config\_content) | Optional cloud-init boot configuration content | `string` | `null` | no |
-| <a name="input_constraints"></a> [constraints](#input\_constraints) | Placement constraints for the virtual machine | `list(map(string))` | `[]` | no |
+| <a name="input_constraints"></a> [constraints](#input\_constraints) | Placement constraints for the virtual machine | <pre>list(object({<br/>    mandatory  = bool<br/>    expression = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_disks"></a> [disks](#input\_disks) | List of block device IDs to attach as disks | `list(string)` | `[]` | no |
 | <a name="input_flavor"></a> [flavor](#input\_flavor) | Flavor name or ID used for the virtual machine | `string` | n/a | yes |
 | <a name="input_image"></a> [image](#input\_image) | Image name or ID used for the virtual machine | `string` | n/a | yes |
-| <a name="input_image_disk_constraints"></a> [image\_disk\_constraints](#input\_image\_disk\_constraints) | Image disk constraints as key/value pairs | `list(map(string))` | `[]` | no |
+| <a name="input_image_disk_constraints"></a> [image\_disk\_constraints](#input\_image\_disk\_constraints) | Constraints that drive placement policy for the image disk | <pre>list(object({<br/>    mandatory  = bool<br/>    expression = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_nics"></a> [nics](#input\_nics) | List of network IDs to attach as NICs | `list(string)` | `[]` | no |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Name of the vRA project to deploy the machine into | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to the virtual machine | `list(map(string))` | `[]` | no |
