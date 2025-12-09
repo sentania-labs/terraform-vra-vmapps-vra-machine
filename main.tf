@@ -9,9 +9,13 @@ resource "vra_machine" "this" {
   image       = var.image
   flavor      = var.flavor
 
-  image_disk_constraints = var.image_disk_constraints
-  tags = var.tags
-  constraints = var.constraints
+  dynamic "tags" {
+    for_each = var.tags
+    content {
+      key   = tags.value.key
+      value = tags.value.value
+    }
+  }
 
   dynamic "disks" {
     for_each = var.disks
