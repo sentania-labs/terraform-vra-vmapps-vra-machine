@@ -7,8 +7,10 @@ resource "vra_machine" "this" {
   description = var.virtual_machine_description
   project_id  = data.vra_project.this.id
   image       = var.image
+  image_ref   = var.image_ref
   flavor      = var.flavor
-
+  deployment_id = var.deployment_id
+  
   dynamic "image_disk_constraints" {
     for_each = var.image_disk_constraints
     content {

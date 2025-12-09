@@ -15,8 +15,22 @@ variable "virtual_machine_description" {
 }
 
 variable "image" {
-  description = "Image name or ID used for the virtual machine"
+  description = "Image name or ID"
   type        = string
+  default     = null
+  validation {
+    condition = (
+      (var.image != null && var.image_ref == null) ||
+      (var.image == null && var.image_ref != null)
+    )
+    error_message = "Exactly one of 'image' or 'image_ref' must be set."
+  }
+}
+
+variable "image_ref" {
+  description = "Image reference ID"
+  type        = string
+  default     = null
 }
 
 variable "flavor" {
