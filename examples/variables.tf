@@ -13,6 +13,30 @@ variable "image" {
 variable "flavor" {
   type = string
 }
+variable "image_disk_constraints" {
+  description = "Constraints that drive placement policy for the image disk"
+  type = list(object({
+    mandatory  = bool
+    expression = string
+  }))
+  default = []
+}
+
+ariable "tags" {
+  description = "Tags to apply to the virtual machine"
+  type        = list(map(string))
+  default     = []
+}
+
+variable "constraints" {
+  description = "Placement constraints for the virtual machine"
+  type = list(object({
+    mandatory  = bool
+    expression = string
+  }))
+  default = []
+}
+
 /**
  * vcfa_url
  * URL of the VCF-A (Aria Automation) endpoint.
