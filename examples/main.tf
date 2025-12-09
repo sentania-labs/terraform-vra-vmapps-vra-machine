@@ -9,7 +9,7 @@ module "machine" {
   source                     = "../../"
   virtualmachine_name        = var.virtual_machine_name
   virtualmachine_description = var.virtual_machine_description
-  project_id                 = var.project_id
+  project_id                 = var.project_name
   image                      = var.image
   flavor                     = var.flavor
 }

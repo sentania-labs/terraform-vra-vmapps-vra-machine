@@ -1,10 +1,10 @@
-variable "virtualmachine_name" {
+variable "virtual_machine_name" {
   type = string
 }
-variable "virtualmachine_description" {
+variable "virtual_machine_description" {
   type = string
 }
-variable "project_id" {
+variable "project_name" {
   type = string
 }
 variable "image" {
