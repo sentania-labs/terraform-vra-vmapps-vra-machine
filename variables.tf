@@ -25,10 +25,14 @@ variable "flavor" {
 }
 
 variable "image_disk_constraints" {
-  description = "Image disk constraints as key/value pairs"
-  type        = list(map(string))
-  default     = []
+  description = "Constraints that drive placement policy for the image disk"
+  type = list(object({
+    mandatory  = bool
+    expression = string
+  }))
+  default = []
 }
+
 
 variable "tags" {
   description = "Tags to apply to the virtual machine"
@@ -38,8 +42,11 @@ variable "tags" {
 
 variable "constraints" {
   description = "Placement constraints for the virtual machine"
-  type        = list(map(string))
-  default     = []
+  type = list(object({
+    mandatory  = bool
+    expression = string
+  }))
+  default = []
 }
 
 variable "disks" {
