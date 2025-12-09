@@ -12,4 +12,7 @@ module "machine" {
   project_id                 = var.project_name
   image                      = var.image
   flavor                     = var.flavor
+  constraints                = var.constraints
+  image_disk_constraints     = var.image_disk_constraints
+  tags                       = var.tags
 }
