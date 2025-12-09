@@ -12,8 +12,7 @@ resource "vra_machine" "this" {
   dynamic "image_disk_constraints" {
     for_each = var.image_disk_constraints
     content {
-      key   = image_disk_constraints.value["key"]
-      value = image_disk_constraints.value["value"]
+      image_disk_constraints = image_disk_constraints.value
     }
   }
   dynamic "tags" {
@@ -26,8 +25,7 @@ resource "vra_machine" "this" {
   dynamic "constraints" {
     for_each = var.constraints
     content {
-      key   = constraints.value["key"]
-      value = constraints.value["value"]
+      constraints = constraints.value
     }
   }
   dynamic "disks" {
